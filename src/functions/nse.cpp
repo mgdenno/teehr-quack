@@ -5,12 +5,14 @@
 #include <iostream>
 
 /*
-
-create table test (obs float, sim float);
-insert into test (obs, sim) values (1.0, 1.1);
-insert into test (obs, sim) values (1.2, 1.3);
-insert into test (obs, sim) values (2.0, 2.1);
-select nash_sutcliffe(obs, sim) from test;
+create table test (obs float, sim float, grp varchar);
+insert into test (obs, sim, grp) values (1.0, 1.1, 'A');
+insert into test (obs, sim, grp) values (1.2, 1.3, 'A');
+insert into test (obs, sim, grp) values (2.0, 2.1, 'A');
+insert into test (obs, sim, grp) values (1.1, 1.3, 'B');
+insert into test (obs, sim, grp) values (1.4, 1.0, 'B');
+insert into test (obs, sim, grp) values (2.2, 2.4, 'B');
+select grp, nash_sutcliffe(obs, sim) from test group by grp;
 */
 
 namespace teehr {
