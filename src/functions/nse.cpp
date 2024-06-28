@@ -33,6 +33,7 @@ struct NashSutcliffeOperation {
         state.sum_squared_residuals = 0.0;
         state.observed_mean = 0.0;
         state.count = 0;
+        state.observations = {};
     }
 
     // Operation method
